@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>婚禮小彩蛋報名</title>
+  <meta name="description" content="婚禮單身小聯誼彩蛋報名頁，先勾選同意，再填寫資料與上傳照片。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root, [data-theme="light"] {
+      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --space-1: 0.25rem;
+      --space-2: 0.5rem;
+      --space-3: 0.75rem;
+      --space-4: 1rem;
+      --space-5: 1.25rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
+      --space-10: 2.5rem;
+      --space-12: 3rem;
+      --space-16: 4rem;
+      --radius-sm: 0.375rem;
+      --radius-md: 0.5rem;
+      --radius-lg: 0.875rem;
+      --radius-xl: 1.25rem;
+      --color-bg: #f8f4f1;
+      --color-surface: #fffaf7;
+      --color-surface-2: #fffdfb;
+      --color-border: rgba(58, 42, 36, 0.14);
+      --color-divider: rgba(58, 42, 36, 0.1);
+      --color-text: #2f241f;
+      --color-text-muted: #74665e;
+      --color-text-faint: #a79a93;
+      --color-primary: #8f5d52;
+      --color-primary-hover: #774a40;
+      --color-primary-soft: #efe2dd;
+      --color-success: #46785f;
+      --color-error: #b24b58;
+      --shadow-sm: 0 8px 24px rgba(73, 51, 43, 0.06);
+      --shadow-lg: 0 24px 60px rgba(73, 51, 43, 0.12);
+      --font-display: 'Noto Serif TC', serif;
+      --font-body: 'Inter', 'Noto Sans TC', sans-serif;
+      --content: 860px;
+      --transition: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    [data-theme="dark"] {
+      --color-bg: #181413;
+      --color-surface: #221d1a;
+      --color-surface-2: #2a2421;
+      --color-border: rgba(255, 245, 240, 0.12);
+      --color-divider: rgba(255, 245, 240, 0.08);
+      --color-text: #f4ece7;
+      --color-text-muted: #c6b6ae;
+      --color-text-faint: #8f8079;
+      --color-primary: #d2a294;
+      --color-primary-hover: #e3b8ac;
+      --color-primary-soft: rgba(210, 162, 148, 0.12);
+      --shadow-sm: 0 8px 24px rgba(0, 0, 0, 0.22);
+      --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.34);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100dvh;
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      line-height: 1.65;
+      color: var(--color-text);
+      background:
+        radial-gradient(circle at top right, rgba(210, 162, 148, 0.16), transparent 30%),
+        radial-gradient(circle at bottom left, rgba(143, 93, 82, 0.08), transparent 28%),
+        var(--color-bg);
+    }
+    img, svg { display: block; max-width: 100%; }
+    button, input, select, textarea { font: inherit; }
+    button { cursor: pointer; }
+    a { color: inherit; }
+    :focus-visible {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 3px;
+      border-radius: var(--radius-sm);
+    }
+
+    .skip-link {
+      position: absolute;
+      left: var(--space-4);
+      top: -40px;
+      z-index: 100;
+      padding: var(--space-2) var(--space-3);
+      border-radius: var(--radius-md);
+      background: var(--color-primary);
+      color: white;
+      text-decoration: none;
+    }
+    .skip-link:focus { top: var(--space-4); }
+
+    .shell {
+      width: min(calc(100% - 2rem), var(--content));
+      margin: 0 auto;
+      padding: var(--space-6) 0 var(--space-12);
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-4);
+      margin-bottom: var(--space-8);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-3);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .brand-mark {
+      width: 2.5rem;
+      height: 2.5rem;
+      padding: 0.45rem;
+      border-radius: 50%;
+      color: var(--color-primary);
+      background: var(--color-primary-soft);
+      box-shadow: inset 0 0 0 1px rgba(143, 93, 82, 0.14);
+    }
+
+    .theme-toggle {
+      min-width: 44px;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--color-border);
+      border-radius: 999px;
+      background: var(--color-surface);
+      color: var(--color-text);
+      transition: transform var(--transition), border-color var(--transition), background var(--transition);
+    }
+    .theme-toggle:hover { transform: translateY(-1px); }
+
+    .hero {
+      display: grid;
+      gap: var(--space-6);
+      margin-bottom: var(--space-8);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      width: fit-content;
+      padding: 0.45rem 0.8rem;
+      border-radius: 999px;
+      background: var(--color-primary-soft);
+      color: var(--color-primary);
+      font-size: var(--text-sm);
+      font-weight: 600;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      line-height: 1.2;
+      letter-spacing: 0.02em;
+    }
+
+    .hero p {
+      margin: 0;
+      max-width: 40rem;
+      color: var(--color-text-muted);
+    }
+
+    .panel {
+      background: color-mix(in srgb, var(--color-surface) 92%, transparent);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+    }
+
+    .progress {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--color-divider);
+      border-bottom: 1px solid var(--color-divider);
+    }
+
+    .step {
+      padding: var(--space-4);
+      background: var(--color-surface-2);
+      color: var(--color-text-faint);
+      font-size: var(--text-sm);
+      font-weight: 600;
+    }
+
+    .step.active,
+    .step.done {
+      color: var(--color-text);
+      background: var(--color-surface);
+    }
+
+    .view {
+      padding: clamp(1.25rem, 3vw, 2rem);
+      display: none;
+    }
+
+    .view.active { display: block; }
+
+    .section-title {
+      margin: 0 0 var(--space-2);
+      font-size: var(--text-lg);
+      font-weight: 700;
+    }
+
+    .section-copy {
+      margin: 0 0 var(--space-6);
+      color: var(--color-text-muted);
+    }
+
+    .consent-list {
+      display: grid;
+      gap: var(--space-4);
+      margin-bottom: var(--space-6);
+    }
+
+    .consent-item {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: start;
+      gap: var(--space-3);
+      padding: var(--space-4);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      background: var(--color-surface-2);
+    }
+
+    .consent-item input[type="checkbox"] {
+      width: 1.15rem;
+      height: 1.15rem;
+      margin-top: 0.2rem;
+      accent-color: var(--color-primary);
+    }
+
+    .consent-item strong {
+      display: block;
+      margin-bottom: 0.15rem;
+      font-size: var(--text-sm);
+    }
+
+    .hint {
+      padding: var(--space-4);
+      border-radius: var(--radius-lg);
+      background: var(--color-primary-soft);
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
+      margin-bottom: var(--space-6);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-3);
+      align-items: center;
+    }
+
+    .btn {
+      min-height: 44px;
+      padding: 0.85rem 1.2rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-size: var(--text-sm);
+      font-weight: 600;
+      transition: transform var(--transition), background var(--transition), border-color var(--transition);
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary {
+      background: var(--color-primary);
+      color: #fff;
+    }
+    .btn-primary:hover { background: var(--color-primary-hover); }
+    .btn-secondary {
+      background: transparent;
+      color: var(--color-text);
+      border-color: var(--color-border);
+    }
+
+    .form-grid {
+      display: grid;
+      gap: var(--space-4);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .field {
+      display: grid;
+      gap: 0.45rem;
+    }
+
+    .field.full { grid-column: 1 / -1; }
+
+    label {
+      font-size: var(--text-sm);
+      font-weight: 600;
+    }
+
+    .required::after {
+      content: ' *';
+      color: var(--color-error);
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="url"],
+    select,
+    textarea,
+    input[type="file"] {
+      width: 100%;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      background: var(--color-surface-2);
+      color: var(--color-text);
+      padding: 0.9rem 1rem;
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .note,
+    .status,
+    .upload-preview {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+    }
+
+    .status { margin-top: var(--space-4); }
+    .status.error { color: var(--color-error); }
+    .status.success { color: var(--color-success); }
+
+    .preview-card {
+      display: none;
+      align-items: center;
+      gap: var(--space-4);
+      margin-top: var(--space-3);
+      padding: var(--space-3);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      background: var(--color-surface-2);
+    }
+
+    .preview-card.active { display: flex; }
+
+    .preview-card img {
+      width: 4.5rem;
+      height: 4.5rem;
+      object-fit: cover;
+      border-radius: var(--radius-md);
+    }
+
+    .summary {
+      display: grid;
+      gap: var(--space-3);
+      margin: var(--space-5) 0 var(--space-6);
+    }
+
+    .summary-item {
+      display: flex;
+      justify-content: space-between;
+      gap: var(--space-4);
+      padding-bottom: var(--space-3);
+      border-bottom: 1px solid var(--color-divider);
+      font-size: var(--text-sm);
+    }
+
+    .summary-item span:first-child { color: var(--color-text-muted); }
+
+    .code-block {
+      margin-top: var(--space-6);
+      padding: var(--space-4);
+      border-radius: var(--radius-lg);
+      background: #1c1715;
+      color: #f7efe9;
+      overflow: auto;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 720px) {
+      .form-grid { grid-template-columns: 1fr; }
+      .summary-item { flex-direction: column; }
+      .topbar { align-items: flex-start; }
+      .step { padding: var(--space-3); font-size: var(--text-xs); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要內容</a>
+  <div class="shell">
+    <header class="topbar">
+      <div class="brand" aria-label="婚禮小彩蛋報名">
+        <svg class="brand-mark" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+          <path d="M17 24C17 16.82 22.82 11 30 11C34.23 11 38 13.03 40.37 16.18C42.75 13.03 46.52 11 50.75 11C57.37 11 62 15.91 62 22.41C62 36.66 49.89 45.2 40.37 52.5C30.84 45.2 18.75 36.66 18.75 22.41" stroke="currentColor" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="12" cy="46" r="6" fill="currentColor" opacity="0.22"/>
+          <circle cx="22" cy="51" r="4" fill="currentColor" opacity="0.36"/>
+        </svg>
+        <span>婚禮小彩蛋報名</span>
+      </div>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="切換深色模式">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+    </header>
+
+    <main id="main">
+      <section class="hero">
+        <span class="eyebrow">單身賓客限定彩蛋</span>
+        <h1>先勾選同意，再留下你的資料與照片。</h1>
+        <p>這一版已可直接放上 GitHub Pages，畫面流程為「活動確認 → 填資料與上傳照片 → 完成送出」。目前已預留 Supabase 串接位置，你只要把專案金鑰與資料表名稱填上就能開始收件。</p>
+      </section>
+
+      <section class="panel" aria-label="報名流程">
+        <div class="progress" aria-hidden="true">
+          <div class="step active" data-step-indicator="1">1. 活動確認</div>
+          <div class="step" data-step-indicator="2">2. 填寫資料</div>
+          <div class="step" data-step-indicator="3">3. 送出完成</div>
+        </div>
+
+        <div class="view active" data-view="1">
+          <h2 class="section-title">填資料前，先確認一下</h2>
+          <p class="section-copy">每一項都需要勾選，確認你了解活動方式，也讓主辦方更安心地安排這個婚禮彩蛋。</p>
+
+          <form id="consent-form">
+            <div class="consent-list">
+              <label class="consent-item">
+                <input type="checkbox" name="consent" value="attend_wedding" required />
+                <span>
+                  <strong>我當天會來參加婚禮，也願意加入這個小彩蛋活動</strong>
+                </span>
+              </label>
+
+              <label class="consent-item">
+                <input type="checkbox" name="consent" value="single_status" required />
+                <span>
+                  <strong>我目前是單身，也沒有正在曖昧中或穩定認識對象</strong>
+                  如果婚禮當天不適合繼續參與，會好好跟聯繫我的人說清楚，避免造成誤會～
+                </span>
+              </label>
+
+              <label class="consent-item">
+                <input type="checkbox" name="consent" value="respectful" required />
+                <span>
+                  <strong>我會用尊重、禮貌的方式跟大家互動，且不會漁場管理！</strong>
+                </span>
+              </label>
+
+              <label class="consent-item">
+                <input type="checkbox" name="consent" value="photo_ig" required />
+                <span>
+                  <strong>我願意提供照片與 IG 等資訊，並了解僅用於婚禮當天使用，不會另作保存或其他用途</strong>
+                </span>
+              </label>
+
+              <label class="consent-item">
+                <input type="checkbox" name="consent" value="free_exit" required />
+                <span>
+                  <strong>我明白當天所有互動都很自由、不用上台、I人友善，隨時想退出也完全沒問題～</strong>
+                </span>
+              </label>
+            </div>
+
+            <div class="hint">小提醒：這頁只是確認參加意願與活動共識，真正資料會在下一步填寫。若有任一項不適合，直接關掉頁面也完全沒關係。</div>
+
+            <div class="actions">
+              <button class="btn btn-primary" type="submit">我都了解，繼續填資料</button>
+            </div>
+            <p id="consent-status" class="status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+
+        <div class="view" data-view="2">
+          <h2 class="section-title">填寫資料與上傳照片</h2>
+          <p class="section-copy">欄位先以婚禮當天方便辨識與互動為主，你之後可以再刪減成更精簡的版本。</p>
+
+          <form id="profile-form">
+            <div class="form-grid">
+              <div class="field">
+                <label class="required" for="nickname">暱稱</label>
+                <input id="nickname" name="nickname" type="text" placeholder="例如：Mia / 阿哲" required />
+              </div>
+
+              <div class="field">
+                <label class="required" for="display-name">婚禮當天怎麼稱呼你</label>
+                <input id="display-name" name="displayName" type="text" placeholder="可填中文名或英文名" required />
+              </div>
+
+              <div class="field">
+                <label class="required" for="gender">性別</label>
+                <select id="gender" name="gender" required>
+                  <option value="">請選擇</option>
+                  <option value="female">女生</option>
+                  <option value="male">男生</option>
+                  <option value="nonbinary">非二元 / 其他</option>
+                  <option value="prefer_not">不想透露</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label class="required" for="age-range">年齡區間</label>
+                <select id="age-range" name="ageRange" required>
+                  <option value="">請選擇</option>
+                  <option>24 以下</option>
+                  <option>25–29</option>
+                  <option>30–34</option>
+                  <option>35–39</option>
+                  <option>40 以上</option>
+                </select>
+              </div>
+
+              <div class="field full">
+                <label class="required" for="ig">Instagram</label>
+                <input id="ig" name="instagram" type="text" placeholder="例如：@yourhandle" required />
+              </div>
+
+              <div class="field full">
+                <label for="contact-note">想讓大家怎麼認識你</label>
+                <textarea id="contact-note" name="contactNote" placeholder="例如：可以先從美食、旅遊、狗狗、展覽開始聊。"></textarea>
+              </div>
+
+              <div class="field full">
+                <label class="required" for="photo">上傳一張照片</label>
+                <input id="photo" name="photo" type="file" accept="image/png,image/jpeg,image/webp" required />
+                <div class="note">建議上傳清楚的半身或生活照，JPG / PNG / WEBP 皆可，檔案大小建議 5MB 以下。</div>
+                <div class="preview-card" id="preview-card">
+                  <img id="preview-image" alt="已選擇照片預覽" />
+                  <div class="upload-preview" id="preview-text"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="actions" style="margin-top: var(--space-6);">
+              <button class="btn btn-secondary" type="button" id="back-to-consent">回上一步</button>
+              <button class="btn btn-primary" type="submit">送出報名</button>
+            </div>
+            <p id="profile-status" class="status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+
+        <div class="view" data-view="3">
+          <h2 class="section-title">收到囉，期待婚禮當天見！</h2>
+          <p class="section-copy">這裡會顯示剛剛送出的摘要。若已串接 Supabase，資料與照片也會同步寫入你的專案。</p>
+
+          <div class="summary" id="summary"></div>
+
+          <div class="hint">
+            若你想保守一點，也可以把 Instagram 改成「IG 或其他聯絡方式擇一」，或在婚禮前再由你們人工確認後釋出給參加者。
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" style="margin-top: var(--space-8);">
+        <div class="view active">
+          <h2 class="section-title">Supabase 設定位置</h2>
+          <p class="section-copy">這版已經把前端串接邏輯寫好，但預設為 demo 模式。你只要建立資料表與 bucket，填上下面兩個值就能正式使用。</p>
+          <div class="code-block"><code>// 1. 建立 bucket：wedding-uploads
+// 2. 建立 table：wedding_signups
+// 3. 把下面兩個值改成你的專案資訊
+const SUPABASE_URL = 'https://YOUR-PROJECT.supabase.co';
+const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';</code></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script type="module">
+    import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+
+    const SUPABASE_URL = 'https://YOUR-PROJECT.supabase.co';
+    const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';
+    const TABLE_NAME = 'wedding_signups';
+    const BUCKET_NAME = 'wedding-uploads';
+
+    const state = {
+      consented: false,
+      photoFile: null,
+      photoPreviewUrl: '',
+      latestPayload: null,
+      theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+    };
+
+    const doc = document.documentElement;
+    doc.setAttribute('data-theme', state.theme);
+
+    const views = document.querySelectorAll('[data-view]');
+    const indicators = document.querySelectorAll('[data-step-indicator]');
+    const consentForm = document.getElementById('consent-form');
+    const profileForm = document.getElementById('profile-form');
+    const consentStatus = document.getElementById('consent-status');
+    const profileStatus = document.getElementById('profile-status');
+    const summary = document.getElementById('summary');
+    const photoInput = document.getElementById('photo');
+    const previewCard = document.getElementById('preview-card');
+    const previewImage = document.getElementById('preview-image');
+    const previewText = document.getElementById('preview-text');
+    const backToConsent = document.getElementById('back-to-consent');
+    const themeToggle = document.querySelector('[data-theme-toggle]');
+
+    const supabaseReady = !SUPABASE_URL.includes('YOUR-PROJECT') && !SUPABASE_ANON_KEY.includes('YOUR_SUPABASE_ANON_KEY');
+    const supabase = supabaseReady ? createClient(SUPABASE_URL, SUPABASE_ANON_KEY) : null;
+
+    function setTheme(theme) {
+      state.theme = theme;
+      doc.setAttribute('data-theme', theme);
+      themeToggle.setAttribute('aria-label', theme === 'dark' ? '切換淺色模式' : '切換深色模式');
+      themeToggle.innerHTML = theme === 'dark'
+        ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg>'
+        : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>';
+    }
+
+    themeToggle.addEventListener('click', () => {
+      setTheme(state.theme === 'dark' ? 'light' : 'dark');
+    });
+
+    function showStep(step) {
+      views.forEach((view) => {
+        view.classList.toggle('active', view.dataset.view === String(step));
+      });
+      indicators.forEach((item) => {
+        const itemStep = Number(item.dataset.stepIndicator);
+        item.classList.toggle('active', itemStep === step);
+        item.classList.toggle('done', itemStep < step);
+      });
+    }
+
+    consentForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const checked = consentForm.querySelectorAll('input[name="consent"]:checked');
+      if (checked.length !== 5) {
+        consentStatus.textContent = '請先把五個確認項目都勾選完成。';
+        consentStatus.className = 'status error';
+        return;
+      }
+      state.consented = true;
+      consentStatus.textContent = '';
+      showStep(2);
+      document.getElementById('nickname').focus();
+    });
+
+    backToConsent.addEventListener('click', () => {
+      showStep(1);
+    });
+
+    photoInput.addEventListener('change', () => {
+      const file = photoInput.files?.[0];
+      state.photoFile = file || null;
+      if (!file) {
+        previewCard.classList.remove('active');
+        return;
+      }
+      if (state.photoPreviewUrl) URL.revokeObjectURL(state.photoPreviewUrl);
+      state.photoPreviewUrl = URL.createObjectURL(file);
+      previewImage.src = state.photoPreviewUrl;
+      previewText.textContent = `${file.name} · ${(file.size / 1024 / 1024).toFixed(2)} MB`;
+      previewCard.classList.add('active');
+    });
+
+    function buildSummary(payload) {
+      summary.innerHTML = '';
+      const rows = [
+        ['暱稱', payload.nickname],
+        ['當天稱呼', payload.display_name],
+        ['性別', payload.gender],
+        ['年齡區間', payload.age_range],
+        ['Instagram', payload.instagram],
+        ['認識你的一句話', payload.contact_note || '—'],
+        ['照片檔名', state.photoFile?.name || '—']
+      ];
+      rows.forEach(([label, value]) => {
+        const item = document.createElement('div');
+        item.className = 'summary-item';
+        item.innerHTML = `<span>${label}</span><strong>${escapeHtml(value)}</strong>`;
+        summary.appendChild(item);
+      });
+    }
+
+    function escapeHtml(value) {
+      return String(value)
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#039;');
+    }
+
+    async function uploadPhoto(file) {
+      const extension = file.name.split('.').pop()?.toLowerCase() || 'jpg';
+      const safeBase = (crypto.randomUUID ? crypto.randomUUID() : `${Date.now()}-${Math.random().toString(16).slice(2)}`);
+      const path = `entries/${safeBase}.${extension}`;
+      const { error } = await supabase.storage.from(BUCKET_NAME).upload(path, file, {
+        cacheControl: '3600',
+        upsert: false,
+        contentType: file.type || 'image/jpeg'
+      });
+      if (error) throw error;
+      return path;
+    }
+
+    profileForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      if (!state.consented) {
+        profileStatus.textContent = '請先回到前一步完成活動確認。';
+        profileStatus.className = 'status error';
+        showStep(1);
+        return;
+      }
+
+      const formData = new FormData(profileForm);
+      const file = photoInput.files?.[0];
+      if (!file) {
+        profileStatus.textContent = '請先上傳一張照片。';
+        profileStatus.className = 'status error';
+        return;
+      }
+
+      const payload = {
+        nickname: formData.get('nickname')?.toString().trim(),
+        display_name: formData.get('displayName')?.toString().trim(),
+        gender: formData.get('gender')?.toString(),
+        age_range: formData.get('ageRange')?.toString(),
+        instagram: formData.get('instagram')?.toString().trim(),
+        contact_note: formData.get('contactNote')?.toString().trim(),
+        consent_attend: true,
+        consent_single: true,
+        consent_respectful: true,
+        consent_photo_info: true,
+        consent_free_exit: true,
+        photo_path: null,
+        created_at: new Date().toISOString()
+      };
+
+      profileStatus.textContent = supabaseReady ? '正在送出資料，請稍候…' : '目前為 demo 模式，先做前端流程預覽。';
+      profileStatus.className = 'status';
+
+      try {
+        if (supabaseReady) {
+          const photoPath = await uploadPhoto(file);
+          payload.photo_path = photoPath;
+          const { error } = await supabase.from(TABLE_NAME).insert(payload).select();
+          if (error) throw error;
+          profileStatus.textContent = '資料已成功送出。';
+          profileStatus.className = 'status success';
+        } else {
+          payload.photo_path = `demo/${file.name}`;
+          profileStatus.textContent = '已完成 demo 送出；正式上線前請填入 Supabase 設定。';
+          profileStatus.className = 'status success';
+        }
+
+        state.latestPayload = payload;
+        buildSummary(payload);
+        showStep(3);
+      } catch (error) {
+        console.error(error);
+        profileStatus.textContent = `送出失敗：${error.message || '請檢查 Supabase 設定與資料表欄位。'}`;
+        profileStatus.className = 'status error';
+      }
+    });
+
+    setTheme(state.theme);
+  </script>
+</body>
+</html>
