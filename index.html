@@ -228,12 +228,13 @@
     }
 
     .section-kicker {
-      margin: 0 0 var(--space-6);
-      font-size: var(--text-sm);
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--color-text-faint);
-    }
+  margin: 0 0 var(--space-6);
+  font-size: var(--text-sm);
+  letter-spacing: 0.04em;
+  text-transform: none;
+  color: var(--color-text-muted);
+  line-height: 1.8;
+}
 
     .agreement-list {
       display: grid;
@@ -281,9 +282,31 @@
       padding: var(--space-10) var(--space-4);
     }
 .title-wrap-left {
-  align-items: flex-start;
-  text-align: left;
+  align-items: center;
+  text-align: center;
   padding: 0 0 var(--space-8);
+  margin: 0 auto;
+  animation: titleFadeIn 1.8s ease forwards;
+}
+.agreement-intro {
+  text-align: center;
+  max-width: 32rem;
+  margin: 0 auto var(--space-6);
+  opacity: 0;
+  animation: titleFadeIn 1.4s ease forwards;
+  animation-delay: 0.9s;
+}
+.title-wrap-left .main-title {
+  font-size: clamp(2.8rem, 2rem + 3vw, 4.6rem);
+  line-height: 0.95;
+}
+
+.title-wrap-left .main-title span {
+  display: block;
+}
+
+.title-wrap-left .script-line {
+  margin-top: var(--space-2);
 }
 
 .title-wrap-left .main-title {
@@ -298,7 +321,16 @@
 .title-wrap-left .script-line {
   margin-top: var(--space-2);
 }
-
+@keyframes titleFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .left-pane {
   max-width: 100%;
 }
@@ -568,15 +600,17 @@
       <div class="script-line">Jay &amp; Michelle's Wedding</div>
     </div>
 
-    <p class="section-kicker">Activity Agreement</p>
+    <p class="section-kicker agreement-intro">
+  小彩蛋開始前，要先跟你確認以下事項，以確保大家玩得開心！
+</p>
             <form id="consent-form">
-              <ol class="agreement-list">
+              <ul class="agreement-list">
                 <li><label class="agreement-label"><input type="checkbox" name="consent" value="attend_wedding" required>我當天會來參加婚禮，也願意加入這個小彩蛋活動</label></li>
                 <li><label class="agreement-label"><input type="checkbox" name="consent" value="single_status" required>我目前是單身，也沒有正在曖昧中或穩定認識對象。如果婚禮當天不適合繼續參與，會好好跟聯繫我的人說清楚，避免造成誤會～</label></li>
                 <li><label class="agreement-label"><input type="checkbox" name="consent" value="respectful" required>我會用尊重、禮貌的方式跟大家互動，且不會漁場管理！</label></li>
                 <li><label class="agreement-label"><input type="checkbox" name="consent" value="photo_ig" required>我願意提供照片與 IG 等資訊，並了解僅用於婚禮當天使用，不會另作保存或其他用途</label></li>
                 <li><label class="agreement-label"><input type="checkbox" name="consent" value="free_exit" required>我明白當天所有互動都很自由、不用上台、I人友善，隨時想退出也完全沒問題～</label></li>
-              </ol>
+              </ul>
               <div class="agreement-footer">
                 所有參加者皆已達成上述協議，Enjoy the time!<br>
                 <div class="actions">
