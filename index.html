@@ -173,10 +173,9 @@
     .theme-toggle:hover { transform: translateY(-1px); }
 
     .hero-card {
-      position: relative;
-      display: grid;
-      grid-template-columns: 1.08fr 0.92fr;
-      min-height: 720px;
+  position: relative;
+  display: block;
+  min-height: auto;
       background: var(--color-surface);
       border: 1px solid var(--color-border);
       border-radius: 2rem;
@@ -185,13 +184,10 @@
       backdrop-filter: blur(10px);
     }
 
-    .hero-card::before,
-    .hero-card::after {
-      content: '';
-      position: absolute;
-      background: var(--color-divider);
-      z-index: 1;
-    }
+   .hero-card::before,
+.hero-card::after {
+  display: none;
+}
 
     .hero-card::before {
       left: 50%;
@@ -284,7 +280,28 @@
       gap: var(--space-2);
       padding: var(--space-10) var(--space-4);
     }
+.title-wrap-left {
+  align-items: flex-start;
+  text-align: left;
+  padding: 0 0 var(--space-8);
+}
 
+.title-wrap-left .main-title {
+  font-size: clamp(2.8rem, 2rem + 3vw, 4.6rem);
+  line-height: 0.95;
+}
+
+.title-wrap-left .main-title span {
+  display: block;
+}
+
+.title-wrap-left .script-line {
+  margin-top: var(--space-2);
+}
+
+.left-pane {
+  max-width: 100%;
+}
     .title-eyebrow,
     .date-line {
       letter-spacing: 0.18em;
@@ -541,9 +558,17 @@
 
     <main id="main">
       <section class="hero-card" aria-label="婚禮單身賓客報名頁面">
-        <div class="left-pane">
-          <div>
-            <p class="section-kicker">Activity Agreement</p>
+      <div class="left-pane">
+  <div>
+    <div class="title-wrap title-wrap-left">
+      <h1 class="main-title">
+        <span>The Single Guests</span>
+      </h1>
+      <div class="title-eyebrow">of</div>
+      <div class="script-line">Jay &amp; Michelle's Wedding</div>
+    </div>
+
+    <p class="section-kicker">Activity Agreement</p>
             <form id="consent-form">
               <ol class="agreement-list">
                 <li><label class="agreement-label"><input type="checkbox" name="consent" value="attend_wedding" required>我當天會來參加婚禮，也願意加入這個小彩蛋活動</label></li>
@@ -591,18 +616,7 @@
           </div>
         </div>
 
-        <div class="right-pane">
-          <div class="flower-cluster" aria-hidden="true">
-            <span class="flower flower-1"></span><span class="flower flower-2"></span><span class="flower flower-3"></span><span class="flower flower-4"></span><span class="flower flower-5"></span><span class="flower flower-6"></span><span class="flower flower-7"></span><span class="flower flower-8"></span><span class="flower flower-9"></span><span class="flower flower-10"></span><span class="leaf leaf-1"></span><span class="leaf leaf-2"></span><span class="leaf leaf-3"></span><span class="leaf leaf-4"></span><span class="leaf leaf-5"></span><span class="leaf leaf-6"></span>
-          </div>
-          <div class="right-top title-wrap">
-            <div class="title-eyebrow">Wedding Easter Egg</div>
-            <h1 class="main-title"><span>The</span><span>Single</span><span>Guests</span></h1>
-            <div class="title-eyebrow">of</div>
-            <div class="script-line">Jay &amp; Michelle's Wedding</div>
-          </div>
-          <div class="right-bottom title-wrap"><div class="date-line">20 June, 2026</div></div>
-        </div>
+       
       </section>
 
       <section class="helper-card">
