@@ -3,18 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>婚禮小彩蛋報名</title>
-  <meta name="description" content="婚禮單身小聯誼彩蛋報名頁，先勾選同意，再填寫資料與上傳照片。" />
+  <title>The Single Guests</title>
+  <meta name="description" content="婚禮單身賓客小彩蛋報名頁，採花卉喜帖感視覺。" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Noto+Serif+TC:wght@400;500;700&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root, [data-theme="light"] {
-      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
-      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
-      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
-      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
-      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-xs: clamp(0.75rem, 0.72rem + 0.16vw, 0.875rem);
+      --text-sm: clamp(0.875rem, 0.82rem + 0.25vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.22vw, 1.075rem);
+      --text-lg: clamp(1.15rem, 1.02rem + 0.5vw, 1.45rem);
+      --text-xl: clamp(2.15rem, 1.5rem + 1.4vw, 3.3rem);
+      --text-hero: clamp(3.4rem, 2.1rem + 3.8vw, 5.5rem);
       --space-1: 0.25rem;
       --space-2: 0.5rem;
       --space-3: 0.75rem;
@@ -26,44 +27,43 @@
       --space-12: 3rem;
       --space-16: 4rem;
       --radius-sm: 0.375rem;
-      --radius-md: 0.5rem;
-      --radius-lg: 0.875rem;
-      --radius-xl: 1.25rem;
-      --color-bg: #f8f4f1;
-      --color-surface: #fffaf7;
-      --color-surface-2: #fffdfb;
-      --color-border: rgba(58, 42, 36, 0.14);
-      --color-divider: rgba(58, 42, 36, 0.1);
-      --color-text: #2f241f;
-      --color-text-muted: #74665e;
-      --color-text-faint: #a79a93;
-      --color-primary: #8f5d52;
-      --color-primary-hover: #774a40;
-      --color-primary-soft: #efe2dd;
-      --color-success: #46785f;
-      --color-error: #b24b58;
-      --shadow-sm: 0 8px 24px rgba(73, 51, 43, 0.06);
-      --shadow-lg: 0 24px 60px rgba(73, 51, 43, 0.12);
-      --font-display: 'Noto Serif TC', serif;
-      --font-body: 'Inter', 'Noto Sans TC', sans-serif;
-      --content: 860px;
+      --radius-md: 0.65rem;
+      --radius-lg: 1rem;
+      --radius-xl: 1.6rem;
+      --color-bg: #f7f3ed;
+      --color-surface: rgba(255, 251, 245, 0.92);
+      --color-surface-2: rgba(255, 254, 249, 0.96);
+      --color-border: rgba(114, 90, 72, 0.16);
+      --color-divider: rgba(114, 90, 72, 0.1);
+      --color-text: #5e493c;
+      --color-text-muted: #826b5b;
+      --color-text-faint: #aa978b;
+      --color-primary: #755445;
+      --color-primary-hover: #614235;
+      --color-primary-soft: rgba(223, 204, 189, 0.4);
+      --color-success: #50745b;
+      --color-error: #b55b67;
+      --shadow-lg: 0 24px 50px rgba(99, 74, 60, 0.12);
+      --font-body: 'Noto Serif TC', serif;
+      --font-display: 'Cormorant Garamond', 'Noto Serif TC', serif;
+      --font-script: 'Great Vibes', cursive;
+      --content-width: 1120px;
       --transition: 180ms cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     [data-theme="dark"] {
       --color-bg: #181413;
-      --color-surface: #221d1a;
-      --color-surface-2: #2a2421;
-      --color-border: rgba(255, 245, 240, 0.12);
-      --color-divider: rgba(255, 245, 240, 0.08);
-      --color-text: #f4ece7;
-      --color-text-muted: #c6b6ae;
-      --color-text-faint: #8f8079;
-      --color-primary: #d2a294;
-      --color-primary-hover: #e3b8ac;
-      --color-primary-soft: rgba(210, 162, 148, 0.12);
-      --shadow-sm: 0 8px 24px rgba(0, 0, 0, 0.22);
-      --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.34);
+      --color-surface: rgba(33, 27, 24, 0.92);
+      --color-surface-2: rgba(41, 34, 31, 0.95);
+      --color-border: rgba(255, 244, 236, 0.14);
+      --color-divider: rgba(255, 244, 236, 0.08);
+      --color-text: #f1e6de;
+      --color-text-muted: #cfbeb2;
+      --color-text-faint: #9b8a80;
+      --color-primary: #d8b7a2;
+      --color-primary-hover: #e8c7b3;
+      --color-primary-soft: rgba(216, 183, 162, 0.12);
+      --shadow-lg: 0 24px 50px rgba(0, 0, 0, 0.35);
     }
 
     * { box-sizing: border-box; }
@@ -73,38 +73,60 @@
       min-height: 100dvh;
       font-family: var(--font-body);
       font-size: var(--text-base);
-      line-height: 1.65;
+      line-height: 1.8;
       color: var(--color-text);
       background:
-        radial-gradient(circle at top right, rgba(210, 162, 148, 0.16), transparent 30%),
-        radial-gradient(circle at bottom left, rgba(143, 93, 82, 0.08), transparent 28%),
+        radial-gradient(circle at top left, rgba(255,255,255,0.68), transparent 28%),
+        linear-gradient(180deg, rgba(255,255,255,0.5), rgba(255,255,255,0.15)),
         var(--color-bg);
+      position: relative;
+      overflow-x: hidden;
     }
+
+    body::before,
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    body::before {
+      background-image:
+        radial-gradient(circle at 8% 14%, rgba(128, 168, 120, 0.16) 0 1px, transparent 2px),
+        radial-gradient(circle at 11% 17%, rgba(236, 166, 182, 0.24) 0 4px, transparent 5px),
+        radial-gradient(circle at 89% 12%, rgba(232, 111, 130, 0.24) 0 5px, transparent 6px),
+        radial-gradient(circle at 84% 26%, rgba(246, 199, 104, 0.26) 0 4px, transparent 5px),
+        radial-gradient(circle at 90% 80%, rgba(134, 178, 222, 0.24) 0 4px, transparent 5px),
+        radial-gradient(circle at 10% 82%, rgba(138, 112, 189, 0.22) 0 5px, transparent 6px),
+        radial-gradient(circle at 17% 86%, rgba(125, 170, 122, 0.16) 0 2px, transparent 3px);
+      opacity: 0.9;
+    }
+
+    body::after {
+      background:
+        linear-gradient(115deg, transparent 0 12%, rgba(96, 141, 85, 0.12) 12.2% 12.5%, transparent 12.8% 100%),
+        linear-gradient(245deg, transparent 0 10%, rgba(130, 168, 120, 0.12) 10.2% 10.5%, transparent 10.8% 100%),
+        linear-gradient(70deg, transparent 0 90%, rgba(191, 116, 132, 0.12) 90.2% 90.5%, transparent 90.8% 100%);
+      opacity: 0.55;
+    }
+
     img, svg { display: block; max-width: 100%; }
-    button, input, select, textarea { font: inherit; }
+    button, input, textarea, select { font: inherit; }
     button { cursor: pointer; }
     a { color: inherit; }
+
     :focus-visible {
       outline: 2px solid var(--color-primary);
       outline-offset: 3px;
       border-radius: var(--radius-sm);
     }
 
-    .skip-link {
-      position: absolute;
-      left: var(--space-4);
-      top: -40px;
-      z-index: 100;
-      padding: var(--space-2) var(--space-3);
-      border-radius: var(--radius-md);
-      background: var(--color-primary);
-      color: white;
-      text-decoration: none;
-    }
-    .skip-link:focus { top: var(--space-4); }
-
-    .shell {
-      width: min(calc(100% - 2rem), var(--content));
+    .page {
+      position: relative;
+      z-index: 1;
+      width: min(calc(100% - 2rem), var(--content-width));
       margin: 0 auto;
       padding: var(--space-6) 0 var(--space-12);
     }
@@ -114,25 +136,26 @@
       justify-content: space-between;
       align-items: center;
       gap: var(--space-4);
-      margin-bottom: var(--space-8);
+      margin-bottom: var(--space-6);
     }
 
     .brand {
       display: inline-flex;
       align-items: center;
       gap: var(--space-3);
-      font-weight: 600;
-      letter-spacing: 0.02em;
+      letter-spacing: 0.08em;
+      font-size: var(--text-sm);
+      text-transform: uppercase;
     }
 
     .brand-mark {
-      width: 2.5rem;
-      height: 2.5rem;
-      padding: 0.45rem;
-      border-radius: 50%;
+      width: 2.85rem;
+      height: 2.85rem;
+      padding: 0.55rem;
+      border-radius: 999px;
+      background: rgba(255, 251, 245, 0.55);
       color: var(--color-primary);
-      background: var(--color-primary-soft);
-      box-shadow: inset 0 0 0 1px rgba(143, 93, 82, 0.14);
+      border: 1px solid var(--color-border);
     }
 
     .theme-toggle {
@@ -145,83 +168,193 @@
       border-radius: 999px;
       background: var(--color-surface);
       color: var(--color-text);
-      transition: transform var(--transition), border-color var(--transition), background var(--transition);
+      transition: transform var(--transition), background var(--transition), border-color var(--transition);
     }
     .theme-toggle:hover { transform: translateY(-1px); }
 
-    .hero {
+    .hero-card {
+      position: relative;
       display: grid;
-      gap: var(--space-6);
-      margin-bottom: var(--space-8);
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      width: fit-content;
-      padding: 0.45rem 0.8rem;
-      border-radius: 999px;
-      background: var(--color-primary-soft);
-      color: var(--color-primary);
-      font-size: var(--text-sm);
-      font-weight: 600;
-    }
-
-    h1 {
-      margin: 0;
-      font-family: var(--font-display);
-      font-size: var(--text-xl);
-      line-height: 1.2;
-      letter-spacing: 0.02em;
-    }
-
-    .hero p {
-      margin: 0;
-      max-width: 40rem;
-      color: var(--color-text-muted);
-    }
-
-    .panel {
-      background: color-mix(in srgb, var(--color-surface) 92%, transparent);
+      grid-template-columns: 1.08fr 0.92fr;
+      min-height: 720px;
+      background: var(--color-surface);
       border: 1px solid var(--color-border);
-      border-radius: var(--radius-xl);
-      box-shadow: var(--shadow-lg);
+      border-radius: 2rem;
       overflow: hidden;
+      box-shadow: var(--shadow-lg);
       backdrop-filter: blur(10px);
     }
 
-    .progress {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
+    .hero-card::before,
+    .hero-card::after {
+      content: '';
+      position: absolute;
       background: var(--color-divider);
-      border-bottom: 1px solid var(--color-divider);
+      z-index: 1;
     }
 
-    .step {
-      padding: var(--space-4);
-      background: var(--color-surface-2);
-      color: var(--color-text-faint);
+    .hero-card::before {
+      left: 50%;
+      top: 0;
+      width: 1px;
+      height: 100%;
+      transform: translateX(-0.5px);
+    }
+
+    .hero-card::after {
+      top: 50%;
+      left: 0;
+      height: 1px;
+      width: 100%;
+      transform: translateY(-0.5px);
+    }
+
+    .left-pane,
+    .right-pane {
+      position: relative;
+      z-index: 2;
+      padding: clamp(1.5rem, 3vw, 2.4rem);
+    }
+
+    .left-pane {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: var(--space-8);
+    }
+
+    .right-pane {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      text-align: center;
+    }
+
+    .section-kicker {
+      margin: 0 0 var(--space-6);
       font-size: var(--text-sm);
-      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-text-faint);
     }
 
-    .step.active,
-    .step.done {
+    .agreement-list {
+      display: grid;
+      gap: var(--space-5);
+      margin: 0;
+      padding-left: 1.2rem;
       color: var(--color-text);
-      background: var(--color-surface);
     }
 
-    .view {
-      padding: clamp(1.25rem, 3vw, 2rem);
-      display: none;
+    .agreement-list li { padding-left: 0.15rem; }
+
+    .agreement-list input[type="checkbox"] {
+      width: 1.1rem;
+      height: 1.1rem;
+      margin-right: 0.7rem;
+      accent-color: var(--color-primary);
+      vertical-align: middle;
     }
 
-    .view.active { display: block; }
+    .agreement-label {
+      display: inline;
+      font-size: var(--text-base);
+    }
+
+    .agreement-footer {
+      padding-top: var(--space-5);
+      border-top: 1px solid var(--color-divider);
+      color: var(--color-text-muted);
+    }
+
+    .right-top,
+    .right-bottom {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .title-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-2);
+      padding: var(--space-10) var(--space-4);
+    }
+
+    .title-eyebrow,
+    .date-line {
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+    }
+
+    .main-title {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: var(--text-hero);
+      line-height: 0.9;
+      letter-spacing: 0.08em;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: var(--color-primary);
+    }
+
+    .main-title span { display: block; }
+
+    .script-line {
+      margin-top: var(--space-4);
+      font-family: var(--font-script);
+      font-size: clamp(2rem, 1.2rem + 2vw, 3.1rem);
+      color: var(--color-primary);
+    }
+
+    .date-line { padding-bottom: var(--space-8); }
+
+    .flower-cluster {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .flower,
+    .leaf {
+      position: absolute;
+      border-radius: 999px;
+      opacity: 0.95;
+      filter: blur(0.2px);
+    }
+
+    .flower-1 { top: 5%; left: 20%; width: 1.1rem; height: 1.1rem; background: #f3a6b7; }
+    .flower-2 { top: 7%; left: 38%; width: 1.25rem; height: 1.25rem; background: #f16f63; }
+    .flower-3 { top: 8%; right: 28%; width: 1rem; height: 1rem; background: #e96eb8; }
+    .flower-4 { top: 35%; left: 13%; width: 1rem; height: 1rem; background: #f6b6ce; }
+    .flower-5 { top: 63%; left: 18%; width: 1.15rem; height: 1.15rem; background: #f1d16a; }
+    .flower-6 { bottom: 17%; left: 26%; width: 1.1rem; height: 1.1rem; background: #9ed3f2; }
+    .flower-7 { bottom: 14%; right: 21%; width: 1rem; height: 1rem; background: #7eb0e8; }
+    .flower-8 { top: 60%; right: 14%; width: 0.95rem; height: 0.95rem; background: #f7c86d; }
+    .flower-9 { top: 13%; left: 8%; width: 1rem; height: 1rem; background: #7ca7df; }
+    .flower-10 { bottom: 23%; right: 10%; width: 0.85rem; height: 0.85rem; background: #f4d4df; }
+
+    .leaf-1 { top: 2%; left: 12%; width: 0.45rem; height: 2rem; background: linear-gradient(180deg, #8eaf77, #6f9472); transform: rotate(-28deg); }
+    .leaf-2 { top: 4%; right: 18%; width: 0.35rem; height: 2.6rem; background: linear-gradient(180deg, #8cb08e, #5d7c62); transform: rotate(12deg); }
+    .leaf-3 { bottom: 0; left: 4%; width: 0.55rem; height: 8rem; background: linear-gradient(180deg, #7eab82, #5d785f); transform: rotate(-8deg); }
+    .leaf-4 { bottom: 0; left: 11%; width: 0.45rem; height: 7rem; background: linear-gradient(180deg, #89b88b, #6a876a); transform: rotate(6deg); }
+    .leaf-5 { bottom: 0; right: 9%; width: 0.5rem; height: 7.4rem; background: linear-gradient(180deg, #9ec392, #6a866a); transform: rotate(4deg); }
+    .leaf-6 { bottom: 0; right: 17%; width: 0.42rem; height: 6.8rem; background: linear-gradient(180deg, #8cae7a, #647f61); transform: rotate(-7deg); }
+
+    .form-pane { padding-top: var(--space-10); }
 
     .section-title {
       margin: 0 0 var(--space-2);
       font-size: var(--text-lg);
       font-weight: 700;
+      color: var(--color-primary);
     }
 
     .section-copy {
@@ -229,78 +362,10 @@
       color: var(--color-text-muted);
     }
 
-    .consent-list {
-      display: grid;
-      gap: var(--space-4);
-      margin-bottom: var(--space-6);
-    }
-
-    .consent-item {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      align-items: start;
-      gap: var(--space-3);
-      padding: var(--space-4);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-lg);
-      background: var(--color-surface-2);
-    }
-
-    .consent-item input[type="checkbox"] {
-      width: 1.15rem;
-      height: 1.15rem;
-      margin-top: 0.2rem;
-      accent-color: var(--color-primary);
-    }
-
-    .consent-item strong {
-      display: block;
-      margin-bottom: 0.15rem;
-      font-size: var(--text-sm);
-    }
-
-    .hint {
-      padding: var(--space-4);
-      border-radius: var(--radius-lg);
-      background: var(--color-primary-soft);
-      color: var(--color-text-muted);
-      font-size: var(--text-sm);
-      margin-bottom: var(--space-6);
-    }
-
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--space-3);
-      align-items: center;
-    }
-
-    .btn {
-      min-height: 44px;
-      padding: 0.85rem 1.2rem;
-      border-radius: 999px;
-      border: 1px solid transparent;
-      font-size: var(--text-sm);
-      font-weight: 600;
-      transition: transform var(--transition), background var(--transition), border-color var(--transition);
-    }
-
-    .btn:hover { transform: translateY(-1px); }
-    .btn-primary {
-      background: var(--color-primary);
-      color: #fff;
-    }
-    .btn-primary:hover { background: var(--color-primary-hover); }
-    .btn-secondary {
-      background: transparent;
-      color: var(--color-text);
-      border-color: var(--color-border);
-    }
-
     .form-grid {
       display: grid;
-      gap: var(--space-4);
       grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--space-4);
     }
 
     .field {
@@ -313,6 +378,7 @@
     label {
       font-size: var(--text-sm);
       font-weight: 600;
+      color: var(--color-text);
     }
 
     .required::after {
@@ -321,8 +387,6 @@
     }
 
     input[type="text"],
-    input[type="email"],
-    input[type="url"],
     select,
     textarea,
     input[type="file"] {
@@ -346,10 +410,6 @@
       color: var(--color-text-muted);
     }
 
-    .status { margin-top: var(--space-4); }
-    .status.error { color: var(--color-error); }
-    .status.success { color: var(--color-success); }
-
     .preview-card {
       display: none;
       align-items: center;
@@ -364,11 +424,37 @@
     .preview-card.active { display: flex; }
 
     .preview-card img {
-      width: 4.5rem;
-      height: 4.5rem;
+      width: 4.8rem;
+      height: 4.8rem;
       object-fit: cover;
       border-radius: var(--radius-md);
     }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-3);
+      margin-top: var(--space-6);
+    }
+
+    .btn {
+      min-height: 44px;
+      padding: 0.88rem 1.3rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-size: var(--text-sm);
+      font-weight: 600;
+      transition: transform var(--transition), background var(--transition), border-color var(--transition);
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary { background: var(--color-primary); color: #fff; }
+    .btn-primary:hover { background: var(--color-primary-hover); }
+    .btn-secondary { background: transparent; color: var(--color-text); border-color: var(--color-border); }
+
+    .status { margin-top: var(--space-4); }
+    .status.error { color: var(--color-error); }
+    .status.success { color: var(--color-success); }
 
     .summary {
       display: grid;
@@ -387,248 +473,164 @@
 
     .summary-item span:first-child { color: var(--color-text-muted); }
 
+    .helper-card {
+      margin-top: var(--space-8);
+      padding: var(--space-6);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      background: var(--color-surface);
+      box-shadow: var(--shadow-lg);
+    }
+
     .code-block {
-      margin-top: var(--space-6);
+      margin-top: var(--space-5);
       padding: var(--space-4);
       border-radius: var(--radius-lg);
       background: #1c1715;
-      color: #f7efe9;
+      color: #f6eee7;
       overflow: auto;
       font-size: 0.9rem;
       line-height: 1.6;
     }
 
-    @media (max-width: 720px) {
+    .view { display: none; }
+    .view.active { display: block; }
+
+    @media (max-width: 980px) {
+      .hero-card {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+      .hero-card::before {
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        transform: translateY(-0.5px);
+      }
+      .hero-card::after { display: none; }
       .form-grid { grid-template-columns: 1fr; }
-      .summary-item { flex-direction: column; }
-      .topbar { align-items: flex-start; }
-      .step { padding: var(--space-3); font-size: var(--text-xs); }
+      .main-title { font-size: clamp(3rem, 2rem + 5vw, 4.6rem); }
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-      }
+    @media (max-width: 640px) {
+      .page { width: min(calc(100% - 1rem), var(--content-width)); }
+      .hero-card { border-radius: 1.4rem; }
+      .left-pane,
+      .right-pane { padding: 1.2rem; }
+      .agreement-list { gap: 1rem; }
+      .summary-item { flex-direction: column; }
+      .script-line { font-size: 2.2rem; }
     }
   </style>
 </head>
 <body>
-  <a class="skip-link" href="#main">跳到主要內容</a>
-  <div class="shell">
+  <div class="page">
     <header class="topbar">
-      <div class="brand" aria-label="婚禮小彩蛋報名">
+      <div class="brand" aria-label="The Single Guests">
         <svg class="brand-mark" viewBox="0 0 64 64" fill="none" aria-hidden="true">
-          <path d="M17 24C17 16.82 22.82 11 30 11C34.23 11 38 13.03 40.37 16.18C42.75 13.03 46.52 11 50.75 11C57.37 11 62 15.91 62 22.41C62 36.66 49.89 45.2 40.37 52.5C30.84 45.2 18.75 36.66 18.75 22.41" stroke="currentColor" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
-          <circle cx="12" cy="46" r="6" fill="currentColor" opacity="0.22"/>
-          <circle cx="22" cy="51" r="4" fill="currentColor" opacity="0.36"/>
+          <path d="M18 25C18 17.82 23.82 12 31 12C35.02 12 38.65 13.97 41 17.02C43.35 13.97 46.98 12 51 12C57.08 12 62 16.92 62 23C62 37.6 48.66 46.34 41 52C33.34 46.34 20 37.6 20 23" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M9 49c4-7 10-9 18-6" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity="0.35"/>
         </svg>
-        <span>婚禮小彩蛋報名</span>
+        <span>The Single Guests</span>
       </div>
       <button class="theme-toggle" type="button" data-theme-toggle aria-label="切換深色模式">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-        </svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
       </button>
     </header>
 
     <main id="main">
-      <section class="hero">
-        <span class="eyebrow">單身賓客限定彩蛋</span>
-        <h1>先勾選同意，再留下你的資料與照片。</h1>
-        <p>這一版已可直接放上 GitHub Pages，畫面流程為「活動確認 → 填資料與上傳照片 → 完成送出」。目前已預留 Supabase 串接位置，你只要把專案金鑰與資料表名稱填上就能開始收件。</p>
-      </section>
-
-      <section class="panel" aria-label="報名流程">
-        <div class="progress" aria-hidden="true">
-          <div class="step active" data-step-indicator="1">1. 活動確認</div>
-          <div class="step" data-step-indicator="2">2. 填寫資料</div>
-          <div class="step" data-step-indicator="3">3. 送出完成</div>
-        </div>
-
-        <div class="view active" data-view="1">
-          <h2 class="section-title">填資料前，先確認一下</h2>
-          <p class="section-copy">每一項都需要勾選，確認你了解活動方式，也讓主辦方更安心地安排這個婚禮彩蛋。</p>
-
-          <form id="consent-form">
-            <div class="consent-list">
-              <label class="consent-item">
-                <input type="checkbox" name="consent" value="attend_wedding" required />
-                <span>
-                  <strong>我當天會來參加婚禮，也願意加入這個小彩蛋活動</strong>
-                </span>
-              </label>
-
-              <label class="consent-item">
-                <input type="checkbox" name="consent" value="single_status" required />
-                <span>
-                  <strong>我目前是單身，也沒有正在曖昧中或穩定認識對象</strong>
-                  如果婚禮當天不適合繼續參與，會好好跟聯繫我的人說清楚，避免造成誤會～
-                </span>
-              </label>
-
-              <label class="consent-item">
-                <input type="checkbox" name="consent" value="respectful" required />
-                <span>
-                  <strong>我會用尊重、禮貌的方式跟大家互動，且不會漁場管理！</strong>
-                </span>
-              </label>
-
-              <label class="consent-item">
-                <input type="checkbox" name="consent" value="photo_ig" required />
-                <span>
-                  <strong>我願意提供照片與 IG 等資訊，並了解僅用於婚禮當天使用，不會另作保存或其他用途</strong>
-                </span>
-              </label>
-
-              <label class="consent-item">
-                <input type="checkbox" name="consent" value="free_exit" required />
-                <span>
-                  <strong>我明白當天所有互動都很自由、不用上台、I人友善，隨時想退出也完全沒問題～</strong>
-                </span>
-              </label>
-            </div>
-
-            <div class="hint">小提醒：這頁只是確認參加意願與活動共識，真正資料會在下一步填寫。若有任一項不適合，直接關掉頁面也完全沒關係。</div>
-
-            <div class="actions">
-              <button class="btn btn-primary" type="submit">我都了解，繼續填資料</button>
-            </div>
-            <p id="consent-status" class="status" role="status" aria-live="polite"></p>
-          </form>
-        </div>
-
-        <div class="view" data-view="2">
-          <h2 class="section-title">填寫資料與上傳照片</h2>
-          <p class="section-copy">欄位先以婚禮當天方便辨識與互動為主，你之後可以再刪減成更精簡的版本。</p>
-
-          <form id="profile-form">
-            <div class="form-grid">
-              <div class="field">
-                <label class="required" for="nickname">暱稱</label>
-                <input id="nickname" name="nickname" type="text" placeholder="例如：Mia / 阿哲" required />
-              </div>
-
-              <div class="field">
-                <label class="required" for="display-name">婚禮當天怎麼稱呼你</label>
-                <input id="display-name" name="displayName" type="text" placeholder="可填中文名或英文名" required />
-              </div>
-
-              <div class="field">
-                <label class="required" for="gender">性別</label>
-                <select id="gender" name="gender" required>
-                  <option value="">請選擇</option>
-                  <option value="female">女生</option>
-                  <option value="male">男生</option>
-                  <option value="nonbinary">非二元 / 其他</option>
-                  <option value="prefer_not">不想透露</option>
-                </select>
-              </div>
-
-              <div class="field">
-                <label class="required" for="age-range">年齡區間</label>
-                <select id="age-range" name="ageRange" required>
-                  <option value="">請選擇</option>
-                  <option>24 以下</option>
-                  <option>25–29</option>
-                  <option>30–34</option>
-                  <option>35–39</option>
-                  <option>40 以上</option>
-                </select>
-              </div>
-
-              <div class="field full">
-                <label class="required" for="ig">Instagram</label>
-                <input id="ig" name="instagram" type="text" placeholder="例如：@yourhandle" required />
-              </div>
-
-              <div class="field full">
-                <label for="contact-note">想讓大家怎麼認識你</label>
-                <textarea id="contact-note" name="contactNote" placeholder="例如：可以先從美食、旅遊、狗狗、展覽開始聊。"></textarea>
-              </div>
-
-              <div class="field full">
-                <label class="required" for="photo">上傳一張照片</label>
-                <input id="photo" name="photo" type="file" accept="image/png,image/jpeg,image/webp" required />
-                <div class="note">建議上傳清楚的半身或生活照，JPG / PNG / WEBP 皆可，檔案大小建議 5MB 以下。</div>
-                <div class="preview-card" id="preview-card">
-                  <img id="preview-image" alt="已選擇照片預覽" />
-                  <div class="upload-preview" id="preview-text"></div>
+      <section class="hero-card" aria-label="婚禮單身賓客報名頁面">
+        <div class="left-pane">
+          <div>
+            <p class="section-kicker">Activity Agreement</p>
+            <form id="consent-form">
+              <ol class="agreement-list">
+                <li><label class="agreement-label"><input type="checkbox" name="consent" value="attend_wedding" required>我當天會來參加婚禮，也願意加入這個小彩蛋活動</label></li>
+                <li><label class="agreement-label"><input type="checkbox" name="consent" value="single_status" required>我目前是單身，也沒有正在曖昧中或穩定認識對象。如果婚禮當天不適合繼續參與，會好好跟聯繫我的人說清楚，避免造成誤會～</label></li>
+                <li><label class="agreement-label"><input type="checkbox" name="consent" value="respectful" required>我會用尊重、禮貌的方式跟大家互動，且不會漁場管理！</label></li>
+                <li><label class="agreement-label"><input type="checkbox" name="consent" value="photo_ig" required>我願意提供照片與 IG 等資訊，並了解僅用於婚禮當天使用，不會另作保存或其他用途</label></li>
+                <li><label class="agreement-label"><input type="checkbox" name="consent" value="free_exit" required>我明白當天所有互動都很自由、不用上台、I人友善，隨時想退出也完全沒問題～</label></li>
+              </ol>
+              <div class="agreement-footer">
+                所有參加者皆已達成上述協議，Enjoy the time!<br>
+                <div class="actions">
+                  <button class="btn btn-primary" type="submit">同意並開始填寫</button>
                 </div>
+                <p id="consent-status" class="status" role="status" aria-live="polite"></p>
               </div>
+            </form>
+          </div>
+
+          <div class="view active" data-view="2">
+            <div class="form-pane">
+              <h2 class="section-title">留下你的資料</h2>
+              <p class="section-copy">整體視覺已改成奶油底、咖啡文字、花草環繞的喜帖感，表單區也延續同一套語氣與配色。</p>
+              <form id="profile-form">
+                <div class="form-grid">
+                  <div class="field"><label class="required" for="nickname">暱稱</label><input id="nickname" name="nickname" type="text" placeholder="例如：Mia / 阿哲" required /></div>
+                  <div class="field"><label class="required" for="display-name">婚禮當天怎麼稱呼你</label><input id="display-name" name="displayName" type="text" placeholder="可填中文名或英文名" required /></div>
+                  <div class="field"><label class="required" for="gender">性別</label><select id="gender" name="gender" required><option value="">請選擇</option><option value="female">女生</option><option value="male">男生</option><option value="nonbinary">非二元 / 其他</option><option value="prefer_not">不想透露</option></select></div>
+                  <div class="field"><label class="required" for="age-range">年齡區間</label><select id="age-range" name="ageRange" required><option value="">請選擇</option><option>24 以下</option><option>25–29</option><option>30–34</option><option>35–39</option><option>40 以上</option></select></div>
+                  <div class="field full"><label class="required" for="ig">Instagram</label><input id="ig" name="instagram" type="text" placeholder="例如：@yourhandle" required /></div>
+                  <div class="field full"><label for="contact-note">想讓大家怎麼認識你</label><textarea id="contact-note" name="contactNote" placeholder="例如：可以先從旅行、展覽、咖啡、電影或狗狗開始聊。"></textarea></div>
+                  <div class="field full"><label class="required" for="photo">上傳一張照片</label><input id="photo" name="photo" type="file" accept="image/png,image/jpeg,image/webp" required /><div class="note">建議上傳清楚的半身或生活照，JPG / PNG / WEBP 皆可，檔案大小建議 5MB 以下。</div><div class="preview-card" id="preview-card"><img id="preview-image" alt="已選擇照片預覽" /><div class="upload-preview" id="preview-text"></div></div></div>
+                </div>
+                <div class="actions"><button class="btn btn-secondary" type="button" id="back-to-consent">回上方確認</button><button class="btn btn-primary" type="submit">送出報名</button></div>
+                <p id="profile-status" class="status" role="status" aria-live="polite"></p>
+              </form>
             </div>
+          </div>
 
-            <div class="actions" style="margin-top: var(--space-6);">
-              <button class="btn btn-secondary" type="button" id="back-to-consent">回上一步</button>
-              <button class="btn btn-primary" type="submit">送出報名</button>
+          <div class="view" data-view="3">
+            <div class="form-pane">
+              <h2 class="section-title">收到囉</h2>
+              <p class="section-copy">這裡會顯示你剛剛送出的內容摘要；若已串接 Supabase，資料也會一起寫入資料表與 Storage。</p>
+              <div class="summary" id="summary"></div>
             </div>
-            <p id="profile-status" class="status" role="status" aria-live="polite"></p>
-          </form>
-        </div>
-
-        <div class="view" data-view="3">
-          <h2 class="section-title">收到囉，期待婚禮當天見！</h2>
-          <p class="section-copy">這裡會顯示剛剛送出的摘要。若已串接 Supabase，資料與照片也會同步寫入你的專案。</p>
-
-          <div class="summary" id="summary"></div>
-
-          <div class="hint">
-            若你想保守一點，也可以把 Instagram 改成「IG 或其他聯絡方式擇一」，或在婚禮前再由你們人工確認後釋出給參加者。
           </div>
         </div>
+
+        <div class="right-pane">
+          <div class="flower-cluster" aria-hidden="true">
+            <span class="flower flower-1"></span><span class="flower flower-2"></span><span class="flower flower-3"></span><span class="flower flower-4"></span><span class="flower flower-5"></span><span class="flower flower-6"></span><span class="flower flower-7"></span><span class="flower flower-8"></span><span class="flower flower-9"></span><span class="flower flower-10"></span><span class="leaf leaf-1"></span><span class="leaf leaf-2"></span><span class="leaf leaf-3"></span><span class="leaf leaf-4"></span><span class="leaf leaf-5"></span><span class="leaf leaf-6"></span>
+          </div>
+          <div class="right-top title-wrap">
+            <div class="title-eyebrow">Wedding Easter Egg</div>
+            <h1 class="main-title"><span>The</span><span>Single</span><span>Guests</span></h1>
+            <div class="title-eyebrow">of</div>
+            <div class="script-line">Jay &amp; Michelle's Wedding</div>
+          </div>
+          <div class="right-bottom title-wrap"><div class="date-line">20 June, 2026</div></div>
+        </div>
       </section>
 
-      <section class="panel" style="margin-top: var(--space-8);">
-        <div class="view active">
-          <h2 class="section-title">Supabase 設定位置</h2>
-          <p class="section-copy">這版已經把前端串接邏輯寫好，但預設為 demo 模式。你只要建立資料表與 bucket，填上下面兩個值就能正式使用。</p>
-          <div class="code-block"><code>// 1. 建立 bucket：wedding-uploads
-// 2. 建立 table：wedding_signups
-// 3. 把下面兩個值改成你的專案資訊
-const SUPABASE_URL = 'https://YOUR-PROJECT.supabase.co';
-const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';</code></div>
-        </div>
+      <section class="helper-card">
+        <h2 class="section-title">Supabase 設定</h2>
+        <p class="section-copy">這版保留 GitHub Pages 可部署的靜態結構，並預留 Supabase 上傳照片與寫入資料的程式位置。你只要把專案網址與 anon key 換掉即可。</p>
+        <div class="code-block"><code>const SUPABASE_URL = 'https://YOUR-PROJECT.supabase.co';
+const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';
+const TABLE_NAME = 'wedding_signups';
+const BUCKET_NAME = 'wedding-uploads';</code></div>
       </section>
     </main>
   </div>
 
   <script type="module">
-    import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
-
-    const SUPABASE_URL = 'https://YOUR-PROJECT.supabase.co';
-    const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';
-    const TABLE_NAME = 'wedding_signups';
-    const BUCKET_NAME = 'wedding-uploads';
-
-    const state = {
-      consented: false,
-      photoFile: null,
-      photoPreviewUrl: '',
-      latestPayload: null,
-      theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-    };
-
+    const state = { consented: false, photoFile: null, photoPreviewUrl: '', theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light' };
     const doc = document.documentElement;
-    doc.setAttribute('data-theme', state.theme);
-
-    const views = document.querySelectorAll('[data-view]');
-    const indicators = document.querySelectorAll('[data-step-indicator]');
     const consentForm = document.getElementById('consent-form');
     const profileForm = document.getElementById('profile-form');
     const consentStatus = document.getElementById('consent-status');
     const profileStatus = document.getElementById('profile-status');
-    const summary = document.getElementById('summary');
     const photoInput = document.getElementById('photo');
     const previewCard = document.getElementById('preview-card');
     const previewImage = document.getElementById('preview-image');
     const previewText = document.getElementById('preview-text');
-    const backToConsent = document.getElementById('back-to-consent');
+    const summary = document.getElementById('summary');
+    const views = document.querySelectorAll('[data-view]');
     const themeToggle = document.querySelector('[data-theme-toggle]');
-
-    const supabaseReady = !SUPABASE_URL.includes('YOUR-PROJECT') && !SUPABASE_ANON_KEY.includes('YOUR_SUPABASE_ANON_KEY');
-    const supabase = supabaseReady ? createClient(SUPABASE_URL, SUPABASE_ANON_KEY) : null;
+    const backToConsent = document.getElementById('back-to-consent');
 
     function setTheme(theme) {
       state.theme = theme;
@@ -639,20 +641,38 @@ const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';</code></div>
         : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>';
     }
 
-    themeToggle.addEventListener('click', () => {
-      setTheme(state.theme === 'dark' ? 'light' : 'dark');
-    });
+    function showView(step) {
+      views.forEach((view) => view.classList.toggle('active', view.dataset.view === String(step)));
+    }
 
-    function showStep(step) {
-      views.forEach((view) => {
-        view.classList.toggle('active', view.dataset.view === String(step));
-      });
-      indicators.forEach((item) => {
-        const itemStep = Number(item.dataset.stepIndicator);
-        item.classList.toggle('active', itemStep === step);
-        item.classList.toggle('done', itemStep < step);
+    function escapeHtml(value) {
+      return String(value)
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#039;');
+    }
+
+    function buildSummary(payload) {
+      summary.innerHTML = '';
+      [
+        ['暱稱', payload.nickname],
+        ['當天稱呼', payload.displayName],
+        ['性別', payload.gender],
+        ['年齡區間', payload.ageRange],
+        ['Instagram', payload.instagram],
+        ['認識你的一句話', payload.contactNote || '—'],
+        ['照片檔名', state.photoFile?.name || '—']
+      ].forEach(([label, value]) => {
+        const item = document.createElement('div');
+        item.className = 'summary-item';
+        item.innerHTML = `<span>${label}</span><strong>${escapeHtml(value)}</strong>`;
+        summary.appendChild(item);
       });
     }
+
+    themeToggle.addEventListener('click', () => setTheme(state.theme === 'dark' ? 'light' : 'dark'));
 
     consentForm.addEventListener('submit', (event) => {
       event.preventDefault();
@@ -663,13 +683,14 @@ const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';</code></div>
         return;
       }
       state.consented = true;
-      consentStatus.textContent = '';
-      showStep(2);
+      consentStatus.textContent = '已確認，可以往下填資料。';
+      consentStatus.className = 'status success';
+      document.getElementById('nickname').scrollIntoView({ behavior: 'smooth', block: 'center' });
       document.getElementById('nickname').focus();
     });
 
     backToConsent.addEventListener('click', () => {
-      showStep(1);
+      consentForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
 
     photoInput.addEventListener('change', () => {
@@ -686,54 +707,12 @@ const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';</code></div>
       previewCard.classList.add('active');
     });
 
-    function buildSummary(payload) {
-      summary.innerHTML = '';
-      const rows = [
-        ['暱稱', payload.nickname],
-        ['當天稱呼', payload.display_name],
-        ['性別', payload.gender],
-        ['年齡區間', payload.age_range],
-        ['Instagram', payload.instagram],
-        ['認識你的一句話', payload.contact_note || '—'],
-        ['照片檔名', state.photoFile?.name || '—']
-      ];
-      rows.forEach(([label, value]) => {
-        const item = document.createElement('div');
-        item.className = 'summary-item';
-        item.innerHTML = `<span>${label}</span><strong>${escapeHtml(value)}</strong>`;
-        summary.appendChild(item);
-      });
-    }
-
-    function escapeHtml(value) {
-      return String(value)
-        .replaceAll('&', '&amp;')
-        .replaceAll('<', '&lt;')
-        .replaceAll('>', '&gt;')
-        .replaceAll('"', '&quot;')
-        .replaceAll("'", '&#039;');
-    }
-
-    async function uploadPhoto(file) {
-      const extension = file.name.split('.').pop()?.toLowerCase() || 'jpg';
-      const safeBase = (crypto.randomUUID ? crypto.randomUUID() : `${Date.now()}-${Math.random().toString(16).slice(2)}`);
-      const path = `entries/${safeBase}.${extension}`;
-      const { error } = await supabase.storage.from(BUCKET_NAME).upload(path, file, {
-        cacheControl: '3600',
-        upsert: false,
-        contentType: file.type || 'image/jpeg'
-      });
-      if (error) throw error;
-      return path;
-    }
-
     profileForm.addEventListener('submit', async (event) => {
       event.preventDefault();
-
       if (!state.consented) {
-        profileStatus.textContent = '請先回到前一步完成活動確認。';
+        profileStatus.textContent = '請先完成上方五個同意項目。';
         profileStatus.className = 'status error';
-        showStep(1);
+        consentForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
         return;
       }
 
@@ -747,48 +726,22 @@ const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';</code></div>
 
       const payload = {
         nickname: formData.get('nickname')?.toString().trim(),
-        display_name: formData.get('displayName')?.toString().trim(),
+        displayName: formData.get('displayName')?.toString().trim(),
         gender: formData.get('gender')?.toString(),
-        age_range: formData.get('ageRange')?.toString(),
+        ageRange: formData.get('ageRange')?.toString(),
         instagram: formData.get('instagram')?.toString().trim(),
-        contact_note: formData.get('contactNote')?.toString().trim(),
-        consent_attend: true,
-        consent_single: true,
-        consent_respectful: true,
-        consent_photo_info: true,
-        consent_free_exit: true,
-        photo_path: null,
-        created_at: new Date().toISOString()
+        contactNote: formData.get('contactNote')?.toString().trim()
       };
 
-      profileStatus.textContent = supabaseReady ? '正在送出資料，請稍候…' : '目前為 demo 模式，先做前端流程預覽。';
-      profileStatus.className = 'status';
-
-      try {
-        if (supabaseReady) {
-          const photoPath = await uploadPhoto(file);
-          payload.photo_path = photoPath;
-          const { error } = await supabase.from(TABLE_NAME).insert(payload).select();
-          if (error) throw error;
-          profileStatus.textContent = '資料已成功送出。';
-          profileStatus.className = 'status success';
-        } else {
-          payload.photo_path = `demo/${file.name}`;
-          profileStatus.textContent = '已完成 demo 送出；正式上線前請填入 Supabase 設定。';
-          profileStatus.className = 'status success';
-        }
-
-        state.latestPayload = payload;
-        buildSummary(payload);
-        showStep(3);
-      } catch (error) {
-        console.error(error);
-        profileStatus.textContent = `送出失敗：${error.message || '請檢查 Supabase 設定與資料表欄位。'}`;
-        profileStatus.className = 'status error';
-      }
+      profileStatus.textContent = '目前為前端展示版，你已完成表單流程。';
+      profileStatus.className = 'status success';
+      buildSummary(payload);
+      showView(3);
+      summary.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
 
     setTheme(state.theme);
+    showView(2);
   </script>
 </body>
 </html>
